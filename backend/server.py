@@ -5,8 +5,8 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, EmailStr, Field, ConfigDict
-from typing import List, Optional
+from pydantic import BaseModel, EmailStr, Field, ConfigDict, field_validator
+from typing import List, Optional, Literal
 from datetime import datetime, timezone
 import secrets
 
@@ -19,6 +19,12 @@ db = client[os.environ['DB_NAME']]
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 
 class OrderCreate(BaseModel):
@@ -58,7 +64,7 @@ class Order(BaseModel):
 
 
 class OrderStatusUpdate(BaseModel):
-    status: str
+    status: Literal["pending", "processing", "shipped", "delivered", "cancelled"]
 
 
 class ContactInquiry(BaseModel):
@@ -222,13 +228,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
-
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
