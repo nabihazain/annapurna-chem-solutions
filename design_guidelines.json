@@ -1,0 +1,120 @@
+{
+  "theme": "light",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "emotional_tone": "Professional, Authoritative, Trustworthy, Industrial",
+  "colors": {
+    "primary": "#0F2537",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#475569",
+    "secondary_foreground": "#FFFFFF",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "border": "#E2E8F0",
+    "accent": "#0066CC",
+    "accent_foreground": "#FFFFFF",
+    "destructive": "#DC2626",
+    "muted": "#F1F5F9",
+    "muted_foreground": "#64748B"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Outfit",
+      "body": "IBM Plex Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-black",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-bold",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "h4": "text-lg font-medium",
+      "body": "text-base leading-relaxed text-slate-700",
+      "small": "text-sm text-slate-500",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-slate-500"
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-6 sm:px-12",
+    "section_padding": "py-20 sm:py-32",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-6",
+    "card_padding": "p-8",
+    "radius": "rounded-none sm:rounded-sm",
+    "surface_strategy": {
+      "marketing_sections": "Flat backgrounds with sharp structural grid lines (border-b border-slate-200)",
+      "dashboard_cards": "Flat background, 1px subtle border, no default shadow, shadow-md on hover",
+      "header": "Solid white background with bottom border for clarity (bg-white/95 backdrop-blur-md border-b border-slate-200)"
+    }
+  },
+  "motion_and_interactions": {
+    "hover_state": "bg-slate-900 text-white transition-colors duration-200",
+    "focus_state": "focus:ring-2 focus:ring-accent focus:outline-none",
+    "entrance_animation": "Fade and slide up using framer-motion (y: 20, opacity: 0 to y: 0, opacity: 1, duration: 0.5)"
+  },
+  "components": {
+    "buttons": "Square or slightly rounded (rounded-sm), high contrast. Primary: bg-primary text-white hover:bg-slate-800. Secondary: border border-slate-300 hover:border-primary",
+    "inputs": "Shadcn standard, square edges, border-slate-300, focus:border-primary",
+    "tables": "Shadcn table for admin panel, dense spacing, mono-spaced order IDs",
+    "cards": "Minimalist cardless look or 1px border. Product cards should feature large images with sharp typography below."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/10490664/pexels-photo-10490664.jpeg",
+      "description": "Large industrial plant with towering smokestacks, overlaid with dark blue gradient for text contrast."
+    },
+    "product_organic_binder": {
+      "url": "https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg",
+      "description": "Detailed close-up of white powder texture."
+    },
+    "product_furnace_oil": {
+      "url": "https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg",
+      "description": "Close-up of a rusty oil barrel in an industrial setting."
+    },
+    "product_magnetite_powder": {
+      "url": "https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Black mineral powder on a white surface."
+    },
+    "about_us_worker": {
+      "url": "https://images.pexels.com/photos/32845698/pexels-photo-32845698.jpeg",
+      "description": "Focused industrial worker in protective gear reviewing documents."
+    }
+  },
+  "testing": {
+    "attribute": "data-testid",
+    "rules": "All interactive elements, forms, and key informational elements MUST include a kebab-case data-testid."
+  },
+  "pages_and_features": [
+    {
+      "name": "Home",
+      "sections": ["Hero Section", "Features/Trust Markers", "Featured Products", "CTA to Order"]
+    },
+    {
+      "name": "Products",
+      "sections": ["Product Catalog Grid (Organic Binder, Furnace Oil, Magnetite Powder)"]
+    },
+    {
+      "name": "Order Request",
+      "sections": ["Form capturing: Product selection, Quantity, Specifications, Contact Info, Delivery Reqs"]
+    },
+    {
+      "name": "Track Order",
+      "sections": ["Search input for Order ID", "Order Status Display"]
+    },
+    {
+      "name": "About & Contact",
+      "sections": ["Company Story", "Contact Details (annapurnaenterprise3@gmail.com)", "Inquiry Form"]
+    },
+    {
+      "name": "Admin Dashboard",
+      "sections": ["Order List Table", "Update Order Status Dialog"]
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Ensure the application strictly follows a light theme with deep corporate blue accents.",
+    "Do NOT use standard rounded cards. Go for sharp edges or max 2px rounded corners.",
+    "Use framer-motion for page transitions and scroll reveals, but keep them professional and subtle (no bouncing).",
+    "Ensure all form interactions have clear success/error toasts using Sonner.",
+    "Build the dashboard using a grid-border technical look (dense tabular data).",
+    "Admin dashboard can use a mock authenticated state or direct access for MVP, but orders should be manageable via a central context/store or mock backend.",
+    "Implement the email notification requirement mockingly via a console log or mock API call.",
+    "Ensure `data-testid` is added to ALL buttons, inputs, links, and major layout sections."
+  ]
+}
