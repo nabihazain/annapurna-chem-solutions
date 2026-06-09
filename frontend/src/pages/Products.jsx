@@ -1,67 +1,131 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
+
+const products = [
+  {
+    id: 'flocculant',
+    name: 'Flocculant',
+    category: 'Water Treatment',
+    description: 'High-performance flocculants used for water clarification, sludge dewatering, and solid-liquid separation in industrial processes. Available in cationic and anionic variants for diverse applications.',
+    applications: [
+      'Water and wastewater treatment',
+      'Mineral processing',
+      'Pulp and paper industry',
+      'Sludge dewatering'
+    ],
+    features: [
+      'High molecular weight',
+      'Excellent settling performance',
+      'Wide pH compatibility',
+      'Cost-effective dosing'
+    ],
+    image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg'
+  },
+  {
+    id: 'cationic-flocculation',
+    name: 'Cationic Flocculation',
+    category: 'Polyacrylamide',
+    description: 'Cationic polyacrylamide flocculant designed for sludge dewatering and treatment of negatively charged colloidal suspensions. Effective in municipal and industrial wastewater applications.',
+    applications: [
+      'Sludge dewatering',
+      'Municipal wastewater treatment',
+      'Paper retention aid',
+      'Oil-water separation'
+    ],
+    features: [
+      'High charge density',
+      'Rapid flocculation',
+      'Strong floc formation',
+      'Reduced sludge volume'
+    ],
+    image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
+  },
+  {
+    id: 'anionic-flocculation',
+    name: 'Anionic Flocculation (APAM)',
+    category: 'Polyacrylamide',
+    description: 'Anionic Polyacrylamide (APAM) for mineral processing, mining, and water clarification. Highly effective in treating suspensions with positively charged particles.',
+    applications: [
+      'Mining and mineral processing',
+      'Coal washing',
+      'Iron ore beneficiation',
+      'Drinking water clarification'
+    ],
+    features: [
+      'High molecular weight',
+      'Excellent solubility',
+      'Strong adsorption',
+      'Effective at low dosage'
+    ],
+    image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85'
+  },
+  {
+    id: 'organic-coagulant',
+    name: 'Organic Coagulant',
+    category: 'Water Treatment',
+    description: 'Polymer-based organic coagulant for primary treatment of industrial wastewater. Effective in reducing turbidity, color, and dissolved organic compounds.',
+    applications: [
+      'Industrial wastewater treatment',
+      'Textile effluent treatment',
+      'Drinking water purification',
+      'Paper mill effluents'
+    ],
+    features: [
+      'Low sludge generation',
+      'Effective over wide pH range',
+      'Reduces chemical consumption',
+      'Environmentally friendly'
+    ],
+    image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg'
+  }
+];
+
+const organicBinders = [
+  {
+    id: 'ae101',
+    name: 'AE101',
+    description: 'Premium grade organic binder for iron ore pelletization. Provides excellent green and dry pellet strength.',
+    features: ['High binding efficiency', 'Superior pellet strength', 'Low ash content']
+  },
+  {
+    id: 'ae002',
+    name: 'AE002',
+    description: 'Cost-effective organic binder for industrial pelletization processes. Balanced performance across multiple applications.',
+    features: ['Versatile usage', 'Consistent quality', 'Economical solution']
+  },
+  {
+    id: 'ae009',
+    name: 'AE009',
+    description: 'High-performance organic binder with enhanced binding properties for premium pellet production.',
+    features: ['Enhanced strength', 'Improved drop number', 'Reduced fines generation']
+  }
+];
 
 const Products = () => {
-  const products = [
-    {
-      id: 'organic-binder',
-      name: 'Organic Binder (OB-AE101)',
-      category: 'Pelletization',
-      description: 'High-quality organic binder specifically formulated for iron ore pelletization processes. Our OB-AE101 ensures excellent binding properties and optimal pellet strength.',
-      applications: [
-        'Iron ore pelletization',
-        'Mineral processing',
-        'Pellet manufacturing'
-      ],
-      features: [
-        'High binding efficiency',
-        'Consistent quality',
-        'Cost-effective solution',
-        'Environmentally compliant'
-      ],
-      image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg'
-    },
-    {
-      id: 'furnace-oil',
-      name: 'Furnace Oil',
-      category: 'Fuel Additives',
-      description: 'Premium quality furnace oil designed for industrial heating applications. Our furnace oil provides efficient combustion and consistent heat generation.',
-      applications: [
-        'Industrial furnaces',
-        'Boiler fuel',
-        'Heat generation',
-        'Manufacturing processes'
-      ],
-      features: [
-        'High calorific value',
-        'Clean burning',
-        'Stable composition',
-        'Industrial grade quality'
-      ],
-      image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
-    },
-    {
-      id: 'magnetite-powder',
-      name: 'Magnetite Powder',
-      category: 'Industrial Minerals',
-      description: 'Industrial-grade magnetite powder used for water and moisture removal from coal. Our magnetite powder offers excellent magnetic properties and purity.',
-      applications: [
-        'Coal drying processes',
-        'Water separation',
-        'Moisture control',
-        'Industrial filtration'
-      ],
-      features: [
-        'High magnetic susceptibility',
-        'Superior purity',
-        'Consistent particle size',
-        'Enhanced efficiency'
-      ],
-      image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85'
+  const location = useLocation();
+  const [bindersExpanded, setBindersExpanded] = useState(false);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      if (id === 'organic-binders' || id.startsWith('ae')) {
+        setBindersExpanded(true);
+      }
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - headerOffset,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
-  ];
+  }, [location]);
 
   return (
     <div data-testid="products-page" className="min-h-screen bg-background">
@@ -85,6 +149,48 @@ const Products = () => {
         </div>
       </section>
 
+      {/* Quick Navigation */}
+      <section className="py-8 bg-white border-b border-slate-200 sticky top-20 z-30" data-testid="product-nav">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12">
+          <div className="flex flex-wrap gap-2">
+            {products.map((p) => (
+              <a
+                key={p.id}
+                href={`#${p.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById(p.id);
+                  if (el) {
+                    const top = el.getBoundingClientRect().top + window.scrollY - 100;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                  }
+                }}
+                data-testid={`nav-product-${p.id}`}
+                className="px-4 py-2 text-sm font-medium border border-slate-300 rounded-sm text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-colors"
+              >
+                {p.name}
+              </a>
+            ))}
+            <a
+              href="#organic-binders"
+              onClick={(e) => {
+                e.preventDefault();
+                setBindersExpanded(true);
+                const el = document.getElementById('organic-binders');
+                if (el) {
+                  const top = el.getBoundingClientRect().top + window.scrollY - 100;
+                  window.scrollTo({ top, behavior: 'smooth' });
+                }
+              }}
+              data-testid="nav-product-organic-binders"
+              className="px-4 py-2 text-sm font-medium border border-slate-300 rounded-sm text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-colors"
+            >
+              Organic Binders
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Products Section */}
       <section className="py-20 sm:py-32">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
@@ -98,7 +204,7 @@ const Products = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 data-testid={`product-${product.id}`}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center scroll-mt-32"
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="h-96 overflow-hidden rounded-sm border border-slate-200">
@@ -157,6 +263,83 @@ const Products = () => {
                 </div>
               </motion.div>
             ))}
+
+            {/* Organic Binders - Expandable Category */}
+            <motion.div
+              id="organic-binders"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              data-testid="product-organic-binders"
+              className="scroll-mt-32"
+            >
+              <button
+                onClick={() => setBindersExpanded(!bindersExpanded)}
+                data-testid="toggle-organic-binders"
+                className="w-full bg-primary text-white p-8 rounded-sm flex items-center justify-between hover:bg-slate-800 transition-colors duration-200"
+              >
+                <div className="text-left">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-300 mb-2">Category</p>
+                  <h2 className="text-3xl sm:text-4xl tracking-tight font-bold">
+                    Organic Binders
+                  </h2>
+                  <p className="text-sm text-slate-200 mt-2">
+                    Premium organic binders for iron ore pelletization — Available in 3 grades
+                  </p>
+                </div>
+                {bindersExpanded ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
+              </button>
+
+              <AnimatePresence initial={false}>
+                {bindersExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                      {organicBinders.map((binder, idx) => (
+                        <motion.div
+                          key={binder.id}
+                          id={binder.id}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: idx * 0.1 }}
+                          data-testid={`binder-${binder.id}`}
+                          className="bg-white border border-slate-200 rounded-sm p-6 hover:shadow-md transition-shadow scroll-mt-32"
+                        >
+                          <div className="bg-accent/10 w-16 h-16 rounded-sm flex items-center justify-center mb-4">
+                            <span className="text-xl font-bold text-accent uppercase">{binder.name}</span>
+                          </div>
+                          <h3 className="text-xl font-semibold text-primary mb-3">{binder.name}</h3>
+                          <p className="text-sm text-slate-700 mb-4">{binder.description}</p>
+                          <ul className="space-y-2 mb-6">
+                            {binder.features.map((f, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                                <span className="text-accent mt-1">•</span>
+                                <span>{f}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            to="/order"
+                            state={{ selectedProduct: `Organic Binder ${binder.name}` }}
+                            data-testid={`order-binder-${binder.id}-btn`}
+                            className="inline-flex items-center gap-2 text-accent font-medium hover:underline text-sm"
+                          >
+                            Order {binder.name}
+                            <ArrowRight size={16} />
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           </div>
         </div>
       </section>

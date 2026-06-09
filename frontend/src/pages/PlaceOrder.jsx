@@ -101,7 +101,7 @@ const PlaceOrder = () => {
               </p>
             </div>
             <p className="text-sm text-slate-600 mb-6">
-              You can track your order status using this Order ID.
+              Please save your Order ID. We'll contact you shortly regarding your order.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -112,11 +112,11 @@ const PlaceOrder = () => {
                 Place Another Order
               </button>
               <a
-                href="/track"
-                data-testid="track-order-btn"
+                href="/products"
+                data-testid="back-to-products-btn"
                 className="px-6 py-3 border border-slate-300 text-primary font-semibold rounded-sm hover:border-primary transition-colors duration-200 inline-block"
               >
-                Track Order
+                Back to Products
               </a>
             </div>
           </motion.div>

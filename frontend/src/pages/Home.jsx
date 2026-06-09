@@ -6,22 +6,22 @@ import { ArrowRight, Shield, Truck, Award } from 'lucide-react';
 const Home = () => {
   const products = [
     {
-      name: 'Organic Binder (OB-AE101)',
-      description: 'High-quality organic binder used in iron ore pelletization processes.',
+      name: 'Flocculants',
+      description: 'High-performance flocculants including cationic & anionic polyacrylamide for water treatment and mineral processing.',
       image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg',
-      link: '/products#organic-binder'
+      link: '/products#flocculant'
     },
     {
-      name: 'Furnace Oil',
-      description: 'Premium quality furnace oil used as an efficient fuel additive.',
+      name: 'Organic Coagulant',
+      description: 'Effective organic coagulant for water clarification, sludge dewatering, and industrial wastewater treatment.',
       image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg',
-      link: '/products#furnace-oil'
+      link: '/products#organic-coagulant'
     },
     {
-      name: 'Magnetite Powder',
-      description: 'Industrial-grade magnetite powder for water and moisture removal from coal.',
+      name: 'Organic Binders',
+      description: 'Premium organic binders (AE101, AE002, AE009) for iron ore pelletization and mineral processing.',
       image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85',
-      link: '/products#magnetite-powder'
+      link: '/products#organic-binders'
     }
   ];
 
@@ -68,8 +68,8 @@ const Home = () => {
             for Industrial Excellence
           </h1>
           <p className="text-lg sm:text-xl text-slate-200 mb-8 max-w-2xl mx-auto" data-testid="hero-subtitle">
-            Trusted supplier of high-quality chemicals for iron ore pelletization,
-            fuel additives, and industrial applications.
+            Trusted supplier of high-quality chemicals for water treatment,
+            mineral processing, and industrial applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -91,43 +91,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 sm:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Why Choose Us</p>
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-primary" data-testid="features-title">
-              Committed to Quality & Service
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                data-testid={`feature-card-${index}`}
-                className="p-8 border border-slate-200 rounded-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <div className="text-accent mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-primary mb-3">{feature.title}</h3>
-                <p className="text-base leading-relaxed text-slate-700">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Products Preview Section */}
+      {/* Products Preview Section - Moved BEFORE Why Choose Us */}
       <section className="py-20 sm:py-32 bg-muted">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
           <motion.div
@@ -189,6 +153,42 @@ const Home = () => {
               View All Products
               <ArrowRight size={20} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - Moved AFTER Products */}
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Why Choose Us</p>
+            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-primary" data-testid="features-title">
+              Committed to Quality & Service
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                data-testid={`feature-card-${index}`}
+                className="p-8 border border-slate-200 rounded-sm hover:shadow-md transition-shadow duration-200"
+              >
+                <div className="text-accent mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-primary mb-3">{feature.title}</h3>
+                <p className="text-base leading-relaxed text-slate-700">{feature.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

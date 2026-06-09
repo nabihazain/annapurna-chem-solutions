@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+const LOGO_URL = 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/otz1hdki_annapurnalogo.PNG';
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -12,7 +14,6 @@ const Header = () => {
     { path: '/', label: 'Home' },
     { path: '/products', label: 'Products' },
     { path: '/order', label: 'Place Order' },
-    { path: '/track', label: 'Track Order' },
     { path: '/about', label: 'About Us' },
     { path: '/contact', label: 'Contact' },
   ];
@@ -21,9 +22,15 @@ const Header = () => {
     <header className="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-12">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center" data-testid="header-logo">
-            <h1 className="text-2xl font-black text-primary">
-              Annapurna Chem Solutions
+          <Link to="/" className="flex items-center gap-3" data-testid="header-logo">
+            <img
+              src={LOGO_URL}
+              alt="Annapurna Chem Solutions Logo"
+              className="h-12 w-12 object-contain"
+            />
+            <h1 className="text-xl sm:text-2xl font-black text-primary leading-tight">
+              Annapurna Chem<br className="sm:hidden" />
+              <span className="sm:ml-2">Solutions</span>
             </h1>
           </Link>
 

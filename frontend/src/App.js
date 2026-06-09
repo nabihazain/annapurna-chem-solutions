@@ -7,7 +7,6 @@ import Footer from '@/components/Layout/Footer';
 import Home from '@/pages/Home';
 import Products from '@/pages/Products';
 import PlaceOrder from '@/pages/PlaceOrder';
-import TrackOrder from '@/pages/TrackOrder';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import AdminDashboard from '@/pages/AdminDashboard';
@@ -22,7 +21,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/order" element={<PlaceOrder />} />
-            <Route path="/track" element={<TrackOrder />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<AdminDashboard />} />

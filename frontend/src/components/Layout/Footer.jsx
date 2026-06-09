@@ -24,9 +24,6 @@ const Footer = () => {
               <Link to="/order" className="block text-slate-300 hover:text-white transition-colors text-sm" data-testid="footer-link-order">
                 Place Order
               </Link>
-              <Link to="/track" className="block text-slate-300 hover:text-white transition-colors text-sm" data-testid="footer-link-track">
-                Track Order
-              </Link>
               <Link to="/about" className="block text-slate-300 hover:text-white transition-colors text-sm" data-testid="footer-link-about">
                 About Us
               </Link>
