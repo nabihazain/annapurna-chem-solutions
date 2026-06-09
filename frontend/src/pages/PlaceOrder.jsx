@@ -32,9 +32,15 @@ const PlaceOrder = () => {
   });
 
   const products = [
-    'Organic Binder (OB-AE101)',
+    'Flocculant',
+    'Cationic Flocculation',
+    'Anionic Flocculation (APAM)',
+    'Organic Coagulant',
+    'Magnetite Powder',
     'Furnace Oil',
-    'Magnetite Powder'
+    'Organic Binder AE101',
+    'Organic Binder AE002',
+    'Organic Binder AE009'
   ];
 
   const handleChange = (e) => {

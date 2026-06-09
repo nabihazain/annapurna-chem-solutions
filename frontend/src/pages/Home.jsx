@@ -14,14 +14,32 @@ const Home = () => {
     {
       name: 'Organic Coagulant',
       description: 'Effective organic coagulant for water clarification, sludge dewatering, and industrial wastewater treatment.',
-      image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg',
+      image: 'https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg',
       link: '/products#organic-coagulant'
+    },
+    {
+      name: 'Magnetite Powder',
+      description: 'Industrial-grade magnetite powder for water and moisture removal from coal and dense media separation.',
+      image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85',
+      link: '/products#magnetite-powder'
+    },
+    {
+      name: 'Furnace Oil',
+      description: 'Premium quality furnace oil designed for industrial heating, boilers, and combustion applications.',
+      image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg',
+      link: '/products#furnace-oil'
     },
     {
       name: 'Organic Binders',
       description: 'Premium organic binders (AE101, AE002, AE009) for iron ore pelletization and mineral processing.',
-      image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg',
       link: '/products#organic-binders'
+    },
+    {
+      name: 'APAM',
+      description: 'Anionic Polyacrylamide for mining, mineral processing, and water clarification applications.',
+      image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg',
+      link: '/products#anionic-flocculation'
     }
   ];
 

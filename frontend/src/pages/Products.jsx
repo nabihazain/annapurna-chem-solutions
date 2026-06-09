@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
@@ -40,7 +40,7 @@ const products = [
       'Strong floc formation',
       'Reduced sludge volume'
     ],
-    image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
+    image: 'https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg'
   },
   {
     id: 'anionic-flocculation',
@@ -59,7 +59,7 @@ const products = [
       'Strong adsorption',
       'Effective at low dosage'
     ],
-    image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85'
+    image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg'
   },
   {
     id: 'organic-coagulant',
@@ -78,7 +78,45 @@ const products = [
       'Reduces chemical consumption',
       'Environmentally friendly'
     ],
-    image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg'
+    image: 'https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg'
+  },
+  {
+    id: 'magnetite-powder',
+    name: 'Magnetite Powder',
+    category: 'Industrial Minerals',
+    description: 'Industrial-grade magnetite powder used for water and moisture removal from coal. Offers excellent magnetic properties and high purity for dense media separation applications.',
+    applications: [
+      'Coal washing and drying',
+      'Dense media separation',
+      'Water and moisture removal',
+      'Iron ore processing'
+    ],
+    features: [
+      'High magnetic susceptibility',
+      'Superior purity',
+      'Consistent particle size',
+      'Enhanced efficiency'
+    ],
+    image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85'
+  },
+  {
+    id: 'furnace-oil',
+    name: 'Furnace Oil',
+    category: 'Fuel Additives',
+    description: 'Premium quality furnace oil designed for industrial heating applications. Provides efficient combustion and consistent heat generation for boilers and industrial furnaces.',
+    applications: [
+      'Industrial furnaces',
+      'Boiler fuel',
+      'Heat generation',
+      'Manufacturing processes'
+    ],
+    features: [
+      'High calorific value',
+      'Clean burning',
+      'Stable composition',
+      'Industrial grade quality'
+    ],
+    image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
   }
 ];
 
@@ -116,16 +154,24 @@ const Products = () => {
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
-          const headerOffset = 100;
+          const headerOffset = 180;
           const elementPosition = element.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({
             top: elementPosition - headerOffset,
             behavior: 'smooth'
           });
         }
-      }, 100);
+      }, 200);
     }
   }, [location]);
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 180;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div data-testid="products-page" className="min-h-screen bg-background">
@@ -142,7 +188,7 @@ const Products = () => {
               Industrial Chemical Products
             </h1>
             <p className="text-lg text-slate-200 max-w-3xl">
-              Explore our range of premium chemical solutions designed for industrial applications.
+              Explore our complete range of premium chemical solutions designed for industrial applications.
               All products meet stringent quality standards and industry certifications.
             </p>
           </motion.div>
@@ -150,7 +196,7 @@ const Products = () => {
       </section>
 
       {/* Quick Navigation */}
-      <section className="py-8 bg-white border-b border-slate-200 sticky top-20 z-30" data-testid="product-nav">
+      <section className="py-4 bg-white border-b border-slate-200 sticky top-20 z-30" data-testid="product-nav">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
           <div className="flex flex-wrap gap-2">
             {products.map((p) => (
@@ -159,11 +205,7 @@ const Products = () => {
                 href={`#${p.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  const el = document.getElementById(p.id);
-                  if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - 100;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                  }
+                  scrollToSection(p.id);
                 }}
                 data-testid={`nav-product-${p.id}`}
                 className="px-4 py-2 text-sm font-medium border border-slate-300 rounded-sm text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-colors"
@@ -176,11 +218,7 @@ const Products = () => {
               onClick={(e) => {
                 e.preventDefault();
                 setBindersExpanded(true);
-                const el = document.getElementById('organic-binders');
-                if (el) {
-                  const top = el.getBoundingClientRect().top + window.scrollY - 100;
-                  window.scrollTo({ top, behavior: 'smooth' });
-                }
+                setTimeout(() => scrollToSection('organic-binders'), 100);
               }}
               data-testid="nav-product-organic-binders"
               className="px-4 py-2 text-sm font-medium border border-slate-300 rounded-sm text-slate-700 hover:bg-primary hover:text-white hover:border-primary transition-colors"
@@ -204,10 +242,10 @@ const Products = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
                 data-testid={`product-${product.id}`}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center scroll-mt-32"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center scroll-mt-44"
               >
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <div className="h-96 overflow-hidden rounded-sm border border-slate-200">
+                  <div className="h-96 overflow-hidden rounded-sm border border-slate-200 bg-muted">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -272,7 +310,7 @@ const Products = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
               data-testid="product-organic-binders"
-              className="scroll-mt-32"
+              className="scroll-mt-44"
             >
               <button
                 onClick={() => setBindersExpanded(!bindersExpanded)}
@@ -309,12 +347,12 @@ const Products = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: idx * 0.1 }}
                           data-testid={`binder-${binder.id}`}
-                          className="bg-white border border-slate-200 rounded-sm p-6 hover:shadow-md transition-shadow scroll-mt-32"
+                          className="bg-white border border-slate-200 rounded-sm p-6 hover:shadow-md transition-shadow scroll-mt-44"
                         >
-                          <div className="bg-accent/10 w-16 h-16 rounded-sm flex items-center justify-center mb-4">
+                          <div className="bg-accent/10 w-fit px-4 py-2 rounded-sm mb-4">
                             <span className="text-xl font-bold text-accent uppercase">{binder.name}</span>
                           </div>
-                          <h3 className="text-xl font-semibold text-primary mb-3">{binder.name}</h3>
+                          <h3 className="text-xl font-semibold text-primary mb-3">Organic Binder {binder.name}</h3>
                           <p className="text-sm text-slate-700 mb-4">{binder.description}</p>
                           <ul className="space-y-2 mb-6">
                             {binder.features.map((f, i) => (
