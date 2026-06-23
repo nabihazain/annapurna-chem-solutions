@@ -117,6 +117,44 @@ const products = [
       'Industrial grade quality'
     ],
     image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
+  },
+  {
+    id: 'tyre-pyrolysis-oil',
+    name: 'Tyre Pyrolysis Oil (TPO)',
+    category: 'Alternative Fuel',
+    description: 'A synthetic fuel derived from the thermal decomposition of scrap tires in an oxygen-free environment. This thermochemical process breaks down complex rubber polymers into smaller hydrocarbon chains, yielding a dark, viscous liquid with a high calorific value similar to conventional furnace oil.',
+    applications: [
+      'Industrial boilers',
+      'Cement kilns',
+      'Power generation',
+      'Furnace fuel replacement'
+    ],
+    features: [
+      'High calorific value',
+      'Sustainable & eco-friendly',
+      'Cost-effective fuel alternative',
+      'Derived from scrap tire recycling'
+    ],
+    image: 'https://images.pexels.com/photos/162568/oil-pump-jack-sunset-clouds-silhouette-162568.jpeg'
+  },
+  {
+    id: 'lshs-oil',
+    name: 'LSHS Oil',
+    category: 'Low Sulphur Fuel',
+    description: 'Low Sulphur Heavy Stock (LSHS) is processed from low-sulphur crude, featuring a much lower sulphur content (< 0.5%) and higher calorific value, resulting in cleaner, more efficient, and less corrosive combustion which is less harmful to the environment.',
+    applications: [
+      'Industrial heating',
+      'Power generation plants',
+      'Marine and shipping fuel',
+      'Boiler and furnace operations'
+    ],
+    features: [
+      'Sulphur content below 0.5%',
+      'High calorific value',
+      'Cleaner & more efficient combustion',
+      'Reduced corrosion & emissions'
+    ],
+    image: 'https://images.pexels.com/photos/1738433/pexels-photo-1738433.jpeg'
   }
 ];
 

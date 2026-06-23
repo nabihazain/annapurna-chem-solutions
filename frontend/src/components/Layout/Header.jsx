@@ -26,7 +26,8 @@ const Header = () => {
             <img
               src={LOGO_URL}
               alt="Annapurna Chem Solutions Logo"
-              className="h-12 w-12 object-contain"
+              className="h-14 w-14 object-contain"
+              style={{ mixBlendMode: 'multiply' }}
             />
             <h1 className="text-xl sm:text-2xl font-black text-primary leading-tight">
               Annapurna Chem<br className="sm:hidden" />

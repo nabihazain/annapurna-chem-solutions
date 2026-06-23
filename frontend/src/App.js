@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import Header from '@/components/Layout/Header';
 import Footer from '@/components/Layout/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import Home from '@/pages/Home';
 import Products from '@/pages/Products';
 import PlaceOrder from '@/pages/PlaceOrder';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App min-h-screen flex flex-col">
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <main className="flex-1">
           <Routes>

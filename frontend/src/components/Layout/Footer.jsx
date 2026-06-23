@@ -9,9 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <h3 className="text-xl font-bold mb-4">Annapurna Chem Solutions</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed mb-3">
               Your trusted partner in chemical supply. Delivering quality products
               for industrial applications across India.
+            </p>
+            <p className="text-slate-400 text-xs italic" data-testid="footer-brand-info">
+              Annapurna Chem Solutions is a brand of Annapurna Enterprise.
             </p>
           </div>
 
@@ -47,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-700 mt-12 pt-8 text-center text-sm text-slate-400">
-          <p>© {new Date().getFullYear()} Annapurna Chem Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Annapurna Enterprise. All rights reserved.</p>
         </div>
       </div>
     </footer>

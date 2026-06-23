@@ -38,6 +38,8 @@ const PlaceOrder = () => {
     'Organic Coagulant',
     'Magnetite Powder',
     'Furnace Oil',
+    'Tyre Pyrolysis Oil (TPO)',
+    'LSHS Oil',
     'Organic Binder AE101',
     'Organic Binder AE002',
     'Organic Binder AE009'
