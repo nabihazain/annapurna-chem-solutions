@@ -59,7 +59,7 @@ const products = [
       'Strong adsorption',
       'Effective at low dosage'
     ],
-    image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/ajvyhyuw_Anionic%20flocculant%20%28Apam%29.jpeg'
   },
   {
     id: 'organic-coagulant',

@@ -38,7 +38,7 @@ const Home = () => {
     {
       name: 'APAM',
       description: 'Anionic Polyacrylamide for mining, mineral processing, and water clarification applications.',
-      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/eof981d2_Anionic%20flocculant%20%28Apam%29.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/ajvyhyuw_Anionic%20flocculant%20%28Apam%29.jpeg',
       link: '/products#anionic-flocculation'
     }
   ];
