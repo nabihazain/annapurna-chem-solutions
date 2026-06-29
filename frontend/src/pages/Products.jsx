@@ -40,7 +40,7 @@ const products = [
       'Strong floc formation',
       'Reduced sludge volume'
     ],
-    image: 'https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/ajvyhyuw_Anionic%20flocculant%20%28Apam%29.jpeg'
   },
   {
     id: 'anionic-flocculation',
@@ -97,7 +97,7 @@ const products = [
       'Consistent particle size',
       'Enhanced efficiency'
     ],
-    image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/btx44epb_magnetite-powder.jpeg'
   },
   {
     id: 'furnace-oil',
@@ -116,7 +116,7 @@ const products = [
       'Stable composition',
       'Industrial grade quality'
     ],
-    image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/vub6wz9s_furnace-oil.jpeg'
   },
   {
     id: 'tyre-pyrolysis-oil',
@@ -158,24 +158,29 @@ const products = [
   }
 ];
 
+const ORGANIC_BINDER_IMG = 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/5i7s6fhe_organic-binder.jpeg';
+
 const organicBinders = [
   {
     id: 'ae101',
     name: 'AE101',
     description: 'Premium grade organic binder for iron ore pelletization. Provides excellent green and dry pellet strength.',
-    features: ['High binding efficiency', 'Superior pellet strength', 'Low ash content']
+    features: ['High binding efficiency', 'Superior pellet strength', 'Low ash content'],
+    image: ORGANIC_BINDER_IMG
   },
   {
     id: 'ae002',
     name: 'AE002',
     description: 'Cost-effective organic binder for industrial pelletization processes. Balanced performance across multiple applications.',
-    features: ['Versatile usage', 'Consistent quality', 'Economical solution']
+    features: ['Versatile usage', 'Consistent quality', 'Economical solution'],
+    image: ORGANIC_BINDER_IMG
   },
   {
     id: 'ae009',
     name: 'AE009',
     description: 'High-performance organic binder with enhanced binding properties for premium pellet production.',
-    features: ['Enhanced strength', 'Improved drop number', 'Reduced fines generation']
+    features: ['Enhanced strength', 'Improved drop number', 'Reduced fines generation'],
+    image: ORGANIC_BINDER_IMG
   }
 ];
 
@@ -385,30 +390,39 @@ const Products = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: idx * 0.1 }}
                           data-testid={`binder-${binder.id}`}
-                          className="bg-white border border-slate-200 rounded-sm p-6 hover:shadow-md transition-shadow scroll-mt-44"
+                          className="bg-white border border-slate-200 rounded-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-44"
                         >
-                          <div className="bg-accent/10 w-fit px-4 py-2 rounded-sm mb-4">
-                            <span className="text-xl font-bold text-accent uppercase">{binder.name}</span>
+                          <div className="h-48 overflow-hidden bg-muted">
+                            <img
+                              src={binder.image}
+                              alt={`Organic Binder ${binder.name}`}
+                              className="w-full h-full object-cover"
+                            />
                           </div>
-                          <h3 className="text-xl font-semibold text-primary mb-3">Organic Binder {binder.name}</h3>
-                          <p className="text-sm text-slate-700 mb-4">{binder.description}</p>
-                          <ul className="space-y-2 mb-6">
-                            {binder.features.map((f, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
-                                <span className="text-accent mt-1">•</span>
-                                <span>{f}</span>
-                              </li>
-                            ))}
-                          </ul>
-                          <Link
-                            to="/order"
-                            state={{ selectedProduct: `Organic Binder ${binder.name}` }}
-                            data-testid={`order-binder-${binder.id}-btn`}
-                            className="inline-flex items-center gap-2 text-accent font-medium hover:underline text-sm"
-                          >
-                            Order {binder.name}
-                            <ArrowRight size={16} />
-                          </Link>
+                          <div className="p-6">
+                            <div className="bg-accent/10 w-fit px-4 py-2 rounded-sm mb-4">
+                              <span className="text-xl font-bold text-accent uppercase">{binder.name}</span>
+                            </div>
+                            <h3 className="text-xl font-semibold text-primary mb-3">Organic Binder {binder.name}</h3>
+                            <p className="text-sm text-slate-700 mb-4">{binder.description}</p>
+                            <ul className="space-y-2 mb-6">
+                              {binder.features.map((f, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm text-slate-700">
+                                  <span className="text-accent mt-1">•</span>
+                                  <span>{f}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <Link
+                              to="/order"
+                              state={{ selectedProduct: `Organic Binder ${binder.name}` }}
+                              data-testid={`order-binder-${binder.id}-btn`}
+                              className="inline-flex items-center gap-2 text-accent font-medium hover:underline text-sm"
+                            >
+                              Order {binder.name}
+                              <ArrowRight size={16} />
+                            </Link>
+                          </div>
                         </motion.div>
                       ))}
                     </div>

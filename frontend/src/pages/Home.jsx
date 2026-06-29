@@ -20,19 +20,19 @@ const Home = () => {
     {
       name: 'Magnetite Powder',
       description: 'Industrial-grade magnetite powder for water and moisture removal from coal and dense media separation.',
-      image: 'https://images.unsplash.com/photo-1608797179015-0f64ad48744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTF8MHwxfHNlYXJjaHwxfHxibGFjayUyMG1pbmVyYWwlMjBwb3dkZXJ8ZW58MHx8fHwxNzgwNDI4Mzk4fDA&ixlib=rb-4.1.0&q=85',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/btx44epb_magnetite-powder.jpeg',
       link: '/products#magnetite-powder'
     },
     {
       name: 'Furnace Oil',
       description: 'Premium quality furnace oil designed for industrial heating, boilers, and combustion applications.',
-      image: 'https://images.pexels.com/photos/9381053/pexels-photo-9381053.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/vub6wz9s_furnace-oil.jpeg',
       link: '/products#furnace-oil'
     },
     {
       name: 'Organic Binders',
       description: 'Premium organic binders (AE101, AE002, AE009) for iron ore pelletization and mineral processing.',
-      image: 'https://images.pexels.com/photos/3735709/pexels-photo-3735709.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/5i7s6fhe_organic-binder.jpeg',
       link: '/products#organic-binders'
     },
     {
