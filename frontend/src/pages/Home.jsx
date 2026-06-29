@@ -8,13 +8,13 @@ const Home = () => {
     {
       name: 'Flocculants',
       description: 'High-performance flocculants including cationic & anionic polyacrylamide for water treatment and mineral processing.',
-      image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/4fjrr4rx_flocculant.jpeg',
       link: '/products#flocculant'
     },
     {
       name: 'Organic Coagulant',
       description: 'Effective organic coagulant for water clarification, sludge dewatering, and industrial wastewater treatment.',
-      image: 'https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/j5gaok5h_coagulant.jpeg',
       link: '/products#organic-coagulant'
     },
     {
@@ -38,7 +38,7 @@ const Home = () => {
     {
       name: 'APAM',
       description: 'Anionic Polyacrylamide for mining, mineral processing, and water clarification applications.',
-      image: 'https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg',
+      image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/eof981d2_Anionic%20flocculant%20%28Apam%29.jpeg',
       link: '/products#anionic-flocculation'
     }
   ];

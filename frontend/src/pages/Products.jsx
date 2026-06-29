@@ -21,7 +21,7 @@ const products = [
       'Wide pH compatibility',
       'Cost-effective dosing'
     ],
-    image: 'https://images.pexels.com/photos/8108249/pexels-photo-8108249.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/4fjrr4rx_flocculant.jpeg'
   },
   {
     id: 'cationic-flocculation',
@@ -78,7 +78,7 @@ const products = [
       'Reduces chemical consumption',
       'Environmentally friendly'
     ],
-    image: 'https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/j5gaok5h_coagulant.jpeg'
   },
   {
     id: 'magnetite-powder',
@@ -135,7 +135,7 @@ const products = [
       'Cost-effective fuel alternative',
       'Derived from scrap tire recycling'
     ],
-    image: 'https://images.pexels.com/photos/162568/oil-pump-jack-sunset-clouds-silhouette-162568.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/mg8pgi6l_tyre-pyrolysis-oil.jpeg'
   },
   {
     id: 'lshs-oil',
@@ -154,7 +154,7 @@ const products = [
       'Cleaner & more efficient combustion',
       'Reduced corrosion & emissions'
     ],
-    image: 'https://images.pexels.com/photos/1738433/pexels-photo-1738433.jpeg'
+    image: 'https://customer-assets.emergentagent.com/job_chem-supply-hub-3/artifacts/lfujwyhj_lshs-oil.jpeg'
   }
 ];
 
