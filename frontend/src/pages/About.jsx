@@ -49,52 +49,56 @@ const About = () => {
 
       {/* Company Story */}
       <section className="py-20 sm:py-32">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="h-96 overflow-hidden rounded-sm border border-slate-200">
-                <img
-                  src="https://images.pexels.com/photos/32845698/pexels-photo-32845698.jpeg"
-                  alt="Industrial worker"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Our Story</p>
-              <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-primary mb-6" data-testid="our-story-title">
-                Building Industrial Excellence
-              </h2>
-              <div className="space-y-4 text-base leading-relaxed text-slate-700">
-                <p>
-                  Annapurna Chem Solutions has established itself as a reliable supplier of
-                  industrial chemicals, serving diverse sectors including iron ore pelletization,
-                  fuel processing, and coal treatment.
-                </p>
-                <p>
-                  We specialize in providing high-quality chemical products that meet stringent
-                  industry standards. Our commitment to quality and customer service has made us
-                  a preferred choice for industrial clients across India.
-                </p>
-                <p>
-                  With a deep understanding of industrial processes and chemical applications,
-                  we work closely with our clients to provide tailored solutions that enhance
-                  their operational efficiency and product quality.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+        <div className="max-w-4xl mx-auto px-6 sm:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Our Story</p>
+            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-primary mb-8" data-testid="our-story-title">
+              Building Industrial Excellence
+            </h2>
+            <div className="space-y-6 text-base leading-relaxed text-slate-700">
+              <p>
+                With over a decade of excellence, Our Company has established itself as a trusted name
+                in the trading, sourcing, and supply of premium-quality chemicals and natural resources.
+                Built on a foundation of integrity, reliability, and customer satisfaction, we have
+                consistently delivered high-quality products and tailored solutions to industries
+                across diverse sectors.
+              </p>
+              <p>
+                Our expertise spans the procurement and distribution of industrial chemicals, specialty
+                in chemical binders, water treatment, magnetite, Furnace Oil and others. By partnering
+                with reputed manufacturers and global suppliers, we ensure that every product meets
+                stringent quality standards while maintaining competitive pricing and upright delivery
+                schedules.
+              </p>
+              <p>
+                Over the years, we have earned the confidence of our clients through transparent
+                business practices, ethical operations, and an unwavering commitment to excellence.
+                Our experienced team understands the dynamic needs of modern industries and works
+                closely with customers to provide customized sourcing solutions that maximize
+                efficiency and create long-term value.
+              </p>
+              <p>
+                Innovation, sustainability, and responsible resource management remain at the core
+                of our business philosophy. We continuously strive to optimize our supply chain,
+                adopt environmentally responsible practices, and contribute positively to the
+                industries and communities we serve.
+              </p>
+              <p>
+                Today, our strong market presence, extensive supplier network, and customer-centric
+                approach have positioned us as a preferred partner for businesses seeking quality,
+                consistency, and reliability.
+              </p>
+              <p className="text-primary font-medium italic border-l-4 border-accent pl-4">
+                At Annapurna Chem Sol, we don't just supply products—we build lasting partnerships,
+                deliver dependable solutions, and drive sustainable growth for our clients worldwide.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -130,74 +134,6 @@ const About = () => {
                 <p className="text-base leading-relaxed text-slate-700">{value.description}</p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Products Overview */}
-      <section className="py-20 sm:py-32">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Our Expertise</p>
-            <h2 className="text-3xl sm:text-4xl tracking-tight font-bold text-primary mb-6" data-testid="expertise-title">
-              Specialized Chemical Solutions
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-accent/10 w-16 h-16 rounded-sm flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-accent">01</span>
-              </div>
-              <h3 className="text-xl font-semibold text-primary mb-3">Organic Binder</h3>
-              <p className="text-base text-slate-700">
-                Premium organic binder (OB-AE101) for iron ore pelletization processes.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-accent/10 w-16 h-16 rounded-sm flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-accent">02</span>
-              </div>
-              <h3 className="text-xl font-semibold text-primary mb-3">Furnace Oil</h3>
-              <p className="text-base text-slate-700">
-                High-quality furnace oil for industrial heating and fuel applications.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-accent/10 w-16 h-16 rounded-sm flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-accent">03</span>
-              </div>
-              <h3 className="text-xl font-semibold text-primary mb-3">Magnetite Powder</h3>
-              <p className="text-base text-slate-700">
-                Industrial-grade magnetite powder for coal moisture removal applications.
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>
